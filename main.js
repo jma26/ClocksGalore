@@ -1,21 +1,27 @@
+var secondHand;
+var hourHand;
+var minuteHand;
 
-function setDate() {
-    const secondHand = document.querySelector(".second-hand");
-    const hourHand = document.querySelector(".hour-hand");
-    const minuteHand = document.querySelector(".min-hand");
-    const now = new Date();
-    const seconds = now.getSeconds();
-    const hour = now.getHours();
-    const minutes = now.getMinutes();
+function setPacific() {
+    secondHand = document.querySelectorAll(".second-hand")[0];
+    hourHand = document.querySelectorAll(".hour-hand")[0];
+    minuteHand = document.querySelectorAll(".min-hand")[0];
 
-    const secondsDegrees = ((seconds/60) * 360 + 90);
-    const hourDegrees = ((hour/12) * 360 + 90);
-    const minuteDegrees = ((minutes/60) * 360 + 90);
+    var pacific = moment();
+    var pac_seconds = pacific.second();
+    var pac_hour = pacific.hour();
+    var pac_minutes = pacific.minute();
 
-    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-    minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
-    console.log(`${hour}:${minutes}:${seconds}`);
-  }
+    var pac_secondsDegrees = ((pac_seconds/60) * 360 + 90);
+    var pac_hourDegrees = ((pac_hour/12) * 360 + 90);
+    var pac_minuteDegrees = ((pac_minutes/60) * 360 + 90);
 
-  setInterval(setDate, 1000);
+    secondHand.style.transform = `rotate(${pac_secondsDegrees}deg)`;
+    hourHand.style.transform = `rotate(${pac_hourDegrees}deg)`;
+    minuteHand.style.transform = `rotate(${pac_minuteDegrees}deg)`;
+}
+
+
+  setInterval(function() {
+      setPacific();
+  }, 1000);
