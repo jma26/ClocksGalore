@@ -24,6 +24,7 @@
     transform: translateY(-3px);
 }
 
+
 .hand {
     transform-origin: 100%; /* Or bottom right */
     transition: all 0.05s cubic-bezier(0.1, 2.7, .58, 1);
