@@ -1,0 +1,23 @@
+{
+  "name": "ClocksGalore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jma26/ClocksGalore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jma26/ClocksGalore/issues"
+  },
+  "homepage": "https://github.com/jma26/ClocksGalore#readme",
+  "dependencies": {
+    "moment": "^2.22.1"
+  }
+}
