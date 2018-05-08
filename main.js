@@ -40,8 +40,28 @@ function setEastern() {
     minuteHand.style.transform = `rotate(${east_minuteDegrees}deg)`;
 }
 
+function setMountain() {
+    secondHand = document.querySelectorAll(".second-hand")[2];
+    hourHand = document.querySelectorAll(".hour-hand")[2];
+    minuteHand = document.querySelectorAll(".min-hand")[2];
+
+    var mountain = moment();
+    var mountain_seconds = mountain.second();
+    var mountain_hour = mountain.hour() + 1;
+    var mountain_minutes = mountain.minute();
+
+    var mountain_secondsDegrees = ((mountain_seconds/60) * 360) + 90;
+    var mountain_hourDegrees = ((mountain_hour/12) * 360) + 90;
+    var mountain_minuteDegrees = ((mountain_minutes/60) * 360) + 90;
+
+    secondHand.style.transform = `rotate(${mountain_secondsDegrees}deg)`;
+    hourHand.style.transform = `rotate(${mountain_hourDegrees}deg)`;
+    minuteHand.style.transform = `rotate(${mountain_minuteDegrees}deg)`;
+}
+
 
   setInterval(function() {
       setPacific();
       setEastern();
+      setMountain();
   }, 1000);
