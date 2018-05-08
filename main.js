@@ -59,9 +59,29 @@ function setMountain() {
     minuteHand.style.transform = `rotate(${mountain_minuteDegrees}deg)`;
 }
 
+function setCentral() {
+    secondHand = document.querySelectorAll(".second-hand")[3];
+    hourHand = document.querySelectorAll(".hour-hand")[3];
+    minuteHand = document.querySelectorAll(".min-hand")[3];
+
+    var central = moment();
+    var central_seconds = central.second();
+    var central_hour = central.hour() + 2;
+    var central_minutes = central.minute();
+
+    var central_secondsDegrees = ((central_seconds/60) * 360) + 90;
+    var central_hourDegrees = ((central_hour/12) * 360) + 90;
+    var central_minuteDegrees = ((central_minutes/60) * 360) + 90;
+
+    secondHand.style.transform = `rotate(${central_secondsDegrees}deg)`;
+    hourHand.style.transform = `rotate(${central_hourDegrees}deg)`;
+    minuteHand.style.transform = `rotate(${central_minuteDegrees}deg)`;
+}
+
 
   setInterval(function() {
       setPacific();
       setEastern();
       setMountain();
+      setCentral();
   }, 1000);
