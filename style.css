@@ -34,3 +34,12 @@
     position: absolute;
     top:50%;
 }
+
+span h2 {
+    visibility: hidden;
+    transition-delay: 0.5s;
+}
+
+span:hover h2{
+    visibility: visible;
+}
